@@ -9,22 +9,18 @@
     "128": "icons/icon128.png"
   },
   "default_locale": "en",
-  "background": {
-    "page": "src/bg/background.html",
-    "persistent": true
-  },
   "permissions": [
-    "tabs",
-    "http://google.com/*"
+    "http://*.google.com/*"
   ],
   "content_scripts": [
     {
       "matches": [
-        "https://www.google.com/*"
+        "https://*.google.com/*"
       ],
       "js": [
-        "src/inject/inject.js"
-      ]
+        "js/inject.js"
+      ],
+      "run_at": "document_start"
     }
   ]
 }
